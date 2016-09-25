@@ -1,0 +1,55 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 48px;
+  font-family: "Bitter", serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none
+}
+
+section.border button {
+  color: #6496c8;
+  background: rgba(0,0,0,0);
+  border: solid 5px #6496c8;
+}
+section.border button:hover,
+section.border button.hover {
+  border-color: #346392;
+  color: #346392;
+}
+section.border button:active,
+section.border button.active {
+  border-color: #27496d;
+  color: #27496d;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #DDA0DD;
+  text-align: center;
+  font-weight: bold;
+}

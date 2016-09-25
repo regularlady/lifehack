@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="tittleTattle">
+<html ng-app="lifeHack">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Lifehack</title>
@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="logo">
+      <img src="assets/images/life_hack_logo.png" alt="lifehack">
+    </div>
+
+    <div class="timer">
+      <div ng-controller="timerController">
+        <h3>{{time | date:'mm:ss'}}</h3>
+        </br>
+        <section class="border">
+          <button ng-click="timerTrigger()">{{buttonMsg}}</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -36,11 +49,12 @@
 
     <!-- App Dependencies -->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/timerController.js"></script>
 
 </body>
 <footer>
   <div class="footer">
-    © Copyright 2016, wonderwoman13
+    © Copyright 2016, @wonderwoman13
   </div>
 </footer>
 </html>

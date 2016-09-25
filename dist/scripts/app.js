@@ -7,10 +7,10 @@
         });
 
         $stateProvider
-            .state('index',{
+            .state('timer',{
             url: '/',
-            controller: 'homeCtrl as home',
-            templateUrl: '/templates/home.html'
+            controller: 'timerController as timer',
+            templateUrl: '/templates/timer.html'
         });
     }
 
