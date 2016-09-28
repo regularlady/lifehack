@@ -1,32 +1,35 @@
 (function() {
-    function timerController ($scope, $interval) {
+    function timerController ($scope, $interval, MY_CONSTANTS) {
 
-    $scope.time = 37500000
+    $scope.time = MY_CONSTANTS.workSessionTime
     $scope.buttonMsg = "Start Timer"
+    var timer;
+    var onBreak = false;
 
     var countdown = function() {
-      $scope.time = $scope.time - 1000
-
       if($scope.time <= 0) {
+        onBreak = (onBreak == true ? false : true);
         $interval.cancel(timer);
+        $scope.buttonMsg = (onBreak == false ? "Start Work" : "Start Break");
+        $scope.time = (onBreak == false ? MY_CONSTANTS.workSessionTime : MY_CONSTANTS.breakSessionTime);
+      } else {
+        $scope.time -= 1000
       }
     }
 
-    var timer;
-
     $scope.timerTrigger = function() {
-      if ( $scope.buttonMsg == "Start Timer" ) {
+      if ( $scope.buttonMsg == "Start Work" || $scope.buttonMsg == "Start Break") {
         timer = $interval(countdown, 2000)
-        $scope.buttonMsg = "Reset Timer"
+        $scope.buttonMsg = (onBreak == false ? "Reset Work" : "Reset Break");
       } else {
         $interval.cancel(timer)
-        $scope.buttonMsg = "Start Timer"
-        $scope.time = 37500000
+        $scope.buttonMsg = (onBreak == false ? "Start Work" : "Start Break");
+        $scope.time = (onBreak == false ? MY_CONSTANTS.workSessionTime : MY_CONSTANTS.breakSessionTime);
       };
     };
   }
 
     angular
         .module('lifeHack')
-        .controller('timerController',['$scope', '$interval', timerController]);
+        .controller('timerController',['$scope', '$interval', 'MY_CONSTANTS', timerController]);
 })();
