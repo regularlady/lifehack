@@ -17,9 +17,7 @@
 angular
     .module('lifeHack', ['ui.router', 'firebase'])
     .constant('MY_CONSTANTS', {
-      // workSessionTime: 37500000,
-      workSessionTime: 5000,
-      // breakSessionTime: 7500000,
+      workSessionTime: 37500000,
       breakSessionTime: 3000,
     })
     .config(config);

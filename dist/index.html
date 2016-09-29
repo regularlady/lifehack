@@ -11,15 +11,7 @@
       <img src="assets/images/life_hack_logo.png" alt="lifehack">
     </div>
 
-    <div class="timer">
-      <div ng-controller="timerController">
-        <h3>{{time | date:'mm:ss'}}</h3>
-        </br>
-        <section class="border">
-          <button ng-click="timerTrigger()">{{buttonMsg}}</button>
-        </div>
-      </div>
-    </div>
+    <ui-view></ui-view>
 
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
