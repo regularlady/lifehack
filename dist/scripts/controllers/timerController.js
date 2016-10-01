@@ -11,6 +11,7 @@
       if($scope.time <= 0) {
         onBreak = !onBreak;
         $interval.cancel(timer);
+        mySound.play();
         $scope.buttonMsg = (onBreak == false ? "Start Work" : "Start Break");
         $scope.time = (onBreak == false ? MY_CONSTANTS.workSessionTime : MY_CONSTANTS.breakSessionTime);
         if ( workSession == 4 ) {
@@ -21,6 +22,10 @@
         $scope.time -= 1000
       }
     }
+
+    var mySound = new buzz.sound( "/sounds/myfile.mp3", {
+      preload: true
+    });
 
     $scope.timerTrigger = function() {
       if ( $scope.buttonMsg == "Start Work" ) {
