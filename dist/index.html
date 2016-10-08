@@ -12,7 +12,7 @@
         <h3>Task History</h3>
 
         <table>
-          <tr ng-repeat="task in task.all">
+          <tr ng-repeat="task in task.all | orderBy : 'created_at' : reverse">
             <td>{{ task.name }}</td>
           </tr>
         </table>
