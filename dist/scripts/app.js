@@ -12,6 +12,12 @@
             controller: 'timerController as timer',
             templateUrl: '/templates/timer.html'
         });
+
+        $stateProvider
+            .state('timer.task',{
+            url: '/',
+            controller: 'taskController as task'
+        });
     }
 
 angular
