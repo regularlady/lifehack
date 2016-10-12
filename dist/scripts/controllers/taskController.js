@@ -1,8 +1,6 @@
 (function() {
-    function taskController (Tasks, $scope, $interval, $firebaseArray) {
+    function taskController (Tasks, $scope, $interval) {
       this.all = Tasks.all
-      var ref = firebase.database().ref().child("tasks");
-      var tasks = $firebaseArray(ref);
 
       $scope.addTask = function(){
         Tasks.create({name: $scope.taskName, created_at: Date.now()});
@@ -13,5 +11,5 @@
 
     angular
         .module('lifeHack')
-        .controller('taskController',['Tasks', '$scope', '$interval', '$firebaseArray', taskController]);
+        .controller('taskController',['Tasks', '$scope', '$interval', taskController]);
 })();
