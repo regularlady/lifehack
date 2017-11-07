@@ -1,3 +1,7 @@
+body {
+  font-family: "Bitter", serif;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -6,17 +10,15 @@
 
 .timer {
   text-align: center;
-  /*display: flex;*/
   align-items: center;
   justify-content: center;
 }
 
 button {
   display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
+  margin: 10px;
+  padding: 15px 30px;
   font-size: 48px;
-  font-family: "Bitter", serif;
   line-height: 1.8;
   appearance: none;
   box-shadow: none;
@@ -31,6 +33,7 @@ section.border button {
   color: #6496c8;
   background: rgba(0,0,0,0);
   border: solid 5px #6496c8;
+  margin-top: 25px;
 }
 section.border button:hover,
 section.border button.hover {
@@ -41,6 +44,34 @@ section.border button:active,
 section.border button.active {
   border-color: #27496d;
   color: #27496d;
+}
+
+.sidebar {
+  background-color:#F0FFFF;
+  float: left;
+  width: 30%;
+  height: 100vh;
+  color: black;
+  padding-left: 20px;
+}
+
+table, th , td {
+  border: 2px solid grey;
+  text-align: center;
+  border-collapse: collapse;
+  width: 300px;
+  padding: 5px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #DDA0DD;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
 .footer {
