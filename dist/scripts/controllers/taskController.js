@@ -3,7 +3,7 @@
       this.all = Tasks.all
 
       $scope.addTask = function(){
-        Tasks.create({name: $scope.taskName});
+        Tasks.create({name: $scope.taskName, created_at: Date.now()});
         $scope.taskName = null
       }
 
